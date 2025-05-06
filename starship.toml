@@ -1,0 +1,159 @@
+format = """
+[░▒▓](jpink)\
+$os\
+$username\
+[](bg:jblue fg:jpink)\
+$directory\
+[](fg:jblue)\
+$git_branch\
+$git_status\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+$docker_context\
+$line_break\
+$character
+"""
+
+# add_newline = false
+
+
+palette = 'jinx'
+
+# Define custom colors
+[palettes.jinx]
+jblue = '#30588C'
+jblack = '#00010D'
+jpink = '#A63F8A'
+
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bold bg:jpink"
+style_root = "bold bg:jpink"
+format = '[ $user ]($style)'
+disabled = false
+
+
+[character]
+success_symbol = "[❯](jpink)"
+error_symbol = "[❯](jpink)"
+
+[os]
+disabled = false
+format = '[ $symbol]($style)'
+style = "bg:jpink"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[directory]
+format = "[ $path ]($style)"
+style = "bg:jblue"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+# "~" = "󰋜 "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Uni" = "󰑴 "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+[c]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = ""
+format = '[ $symbol $context ]($style)'
+
+[elixir]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "fg:#F05133"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+
+[haskell]
+symbol = " "
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+
+[rust]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = ""
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = true
+time_format = "%R" # Hour:Minute Format
+format = '[ $time ]($style)'

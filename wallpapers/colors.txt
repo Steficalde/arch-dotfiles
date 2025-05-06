@@ -1,0 +1,3 @@
+pink = #A63F8A
+black = #00010D
+blue = #30588C
